@@ -32,7 +32,6 @@ public:
             if (books[i].id == bookId) {
                 cout << "Book removed successfully: " << books[i].title << endl;
                 books.erase(books.begin() + i);
-                return;
             }
         }
         cout << "Book with ID " << bookId << " not found." << endl;
@@ -44,7 +43,6 @@ public:
                 book.title = newTitle;
                 book.author = newAuthor;
                 cout << "Book updated successfully: " << bookId << endl;
-                return;
             }
         }
         cout << "Book with ID " << bookId << " not found." << endl;
@@ -55,7 +53,7 @@ public:
             if (book.id == bookId && book.isAvailable) {
                 book.isAvailable = false;
                 cout << "Book borrowed successfully: " << book.title << endl;
-                return;
+                
             }
         }
         cout << "Book with ID " << bookId << " not available for borrowing." << endl;
@@ -66,7 +64,7 @@ public:
             if (book.id == bookId && !book.isAvailable) {
                 book.isAvailable = true;
                 cout << "Book returned successfully: " << book.title << endl;
-                return;
+               
             }
         }
         cout << "Book with ID " << bookId << " not found or not borrowed." << endl;
